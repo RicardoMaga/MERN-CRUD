@@ -27,4 +27,12 @@ router.put("/:id", async (req, res) => {
     res.json(updateItem);
 })
 
+//Apagar item
+
+router.delete("/:id", async (req, res) => {
+    await Item.findByIdAndDelete(req.params.id);
+    res.json({ message: "Deleted"});
+});
+
+export default router;
 
