@@ -19,4 +19,12 @@ router.get("/", async (req, res) => {
     res.json(items);
 });
 
+//Atualizar Item
+
+router.put("/:id", async (req, res) => {
+    const updateItem = await Item.findByIdAndUpdate
+    (req.params.id, req.body,{ new:true});
+    res.json(updateItem);
+})
+
 
